@@ -51,7 +51,7 @@
 
                 </ul>
 
-                <a href="#" class="btn btn-secondary">Discover More</a>
+                <a href="#" class="btn btn-secondary">Join us</a>
 
             </div>
 

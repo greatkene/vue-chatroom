@@ -114,7 +114,7 @@
 
   /* About */
 
-  :is(.about) .container {
+  :is(.about, .about-2) .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;

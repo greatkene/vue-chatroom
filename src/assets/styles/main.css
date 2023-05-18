@@ -156,6 +156,7 @@ nav {
 .features {
   margin-top: -50px;
   margin-right: 20px;
+  /* background-color: var(--culture); */
 }
 
 .features .section-title {
@@ -246,7 +247,7 @@ h2 {
 
 .about-item .item-icon {
   background-color: var(--secondary);
-  color: var(--white);
+  color: var(--primary);
   font-size: var(--fs-7);
   padding: 12px;
   border-radius: 50%;
@@ -265,6 +266,21 @@ h2 {
 }
 
 /* === ABOUT END === */
+
+/* === MORE ABOUT */
+.about-2 .section-text:last-of-type {
+  margin-block: 30px;
+}
+
+.about-2 .about-content {
+  margin-block-end: 30px;
+}
+
+.about-2 .about-content p {
+  color: var(--primary);
+}
+
+/* === MORE ABOUT END */
 
 /* === FOOTER === */
 
