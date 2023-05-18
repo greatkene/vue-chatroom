@@ -3,11 +3,16 @@
 \*-----------------------------------*/
 
 @media (min-width: 575px) {
-  /* === SHARED STYLES === */
-
+  /* Shared Styled */
   .container {
     width: 100%;
     margin-inline: auto;
+  }
+
+  /* Features */
+  .features-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
   }
 }
 
@@ -77,5 +82,57 @@
 
   .hero-content {
     margin-block-end: 0;
+  }
+
+  /* features */
+  .features .section-title {
+    margin-block-end: 40px;
+  }
+
+  .features-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*-----------------------------------*\
+    #Responsive for larger than 1200px 
+  \*-----------------------------------*/
+@media (min-width: 1200px) {
+  :root {
+    --fs-1: 5rem;
+  }
+
+  /* Shared */
+
+  .container {
+    max-width: 1180px;
+  }
+
+  .section-text {
+    --fs-4: 1.5rem;
+  }
+
+  .h2 {
+    --fs-1: 4rem;
+  }
+
+  .h3 {
+    --fs-2: 2.2rem;
+  }
+
+  /* Hero */
+
+  .hero {
+    --section-padding: 30px;
+  }
+
+  /* Features */
+
+  .features-list {
+    gap: 25px;
+  }
+
+  .features-card {
+    padding: 30px;
   }
 }
