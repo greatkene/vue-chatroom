@@ -385,3 +385,86 @@ h2 {
 }
 
 /* === FOOTER ENDS === */
+
+/* === FORM === */
+.login {
+  margin: 50px auto;
+  padding: 40px 40px;
+  max-width: 350px;
+  border-radius: 5px;
+  background: var(--white);
+  box-shadow: 1px 1px 1px 3px var(--primary);
+}
+.login input {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin: 10px 0;
+  padding: 14px 22px;
+  font-size: var(--fs-7);
+  border-radius: var(--radius-10);
+  border: 1px solid var(--primary);
+  transition: 0.2s;
+}
+
+.login h2 {
+  margin: 20px 0 0;
+  color: var(--primary);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+}
+
+.login p {
+  margin-bottom: 40px;
+  font-size: var(--fs-7);
+}
+
+.login .btn {
+  font-size: var(--fs-7);
+}
+
+.form-footer {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid var(--culture);
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.form-footer a {
+  display: table-cell;
+  padding-top: 10px;
+  color: var(--primary);
+}
+
+.form-footer span {
+  font-size: var(--fs-7);
+}
+
+.form-footer a:first-child {
+  text-align: left;
+}
+
+.form-footer a:last-child {
+  text-align: right;
+}
+
+.login h2,
+.login p,
+.login a {
+  text-align: center;
+}
+
+.login a {
+  font-size: var(--fs-7);
+}
+
+.login a:visited {
+  color: inherit;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+/* === FORM ENDS === */

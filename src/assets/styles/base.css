@@ -5,6 +5,7 @@
   --secondary: #ffcc00;
   --primary-dark: #0c4d4b;
   --secondary-light: #f4ee80;
+  --body: #f5f6f8;
 
   --black: #181818;
   --white: #ffffff;
@@ -57,7 +58,7 @@
 body {
   min-height: 100vh;
   color: var(--primary);
-  background: var(--white);
+  background: var(--body);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: 'Montserrat', sans-serif;
