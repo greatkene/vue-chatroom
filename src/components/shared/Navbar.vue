@@ -1,16 +1,14 @@
 <template>
     <nav>
         <div class="container">
-            <h1>Chatroom</h1>
+
+            <img src="../../assets/logo.svg" />
+
             <div class="menu" :class="{ 'is-active': isNavbarActive }">
-                <ul>
-                    <li>
-                        <RouterLink v-for="item in navbarItems" :key="item.title" :to="item.link"
-                            :class="{ 'is-active': isActive(item.link) }">{{
-                                item.title }}
-                        </RouterLink>
-                    </li>
-                </ul>
+                <RouterLink v-for="item in navbarItems" :key="item.title" :to="item.link"
+                    :class="{ 'is-active': isActive(item.link) }">{{
+                        item.title }}
+                </RouterLink>
             </div>
             <button :class="['hamburger', { 'is-active': isNavbarActive }]" @click="toggleNavbar">
                 <span></span>

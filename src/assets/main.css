@@ -87,7 +87,7 @@ nav {
   opacity: 1;
 }
 
-.menu.is-active ul li {
+.menu.is-active {
   display: flex;
   flex-direction: column;
   align-items: center;
