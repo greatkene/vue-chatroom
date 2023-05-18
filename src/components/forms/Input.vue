@@ -1,17 +1,13 @@
 <template>
     <div>
-        <label>{{ label }}</label>
-        <input :type="type" :placeholder="placeholder" :value="value" @input="$emit('update:value', $event.target.value)" />
+        <input :type="type" :placeholder="placeholder" :value="modelValue"
+            @input="$emit('update:modelValue', $event.target.value)" />
     </div>
 </template>
   
 <script>
 export default {
     props: {
-        label: {
-            type: String,
-            required: true
-        },
         type: {
             type: String,
             default: 'text'
@@ -20,7 +16,7 @@ export default {
             type: String,
             default: ''
         },
-        value: {
+        modelValue: {
             type: [String, Number],
             required: true
         }
