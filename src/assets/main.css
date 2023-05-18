@@ -8,9 +8,11 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .container h1 {
   color: var(--white);
 }
+
 nav {
   position: fixed;
   top: 0;
@@ -64,7 +66,56 @@ nav {
   transform: translate(-3px, 3px) rotate(-45deg);
 }
 
+.hamburger.is-active:hover span {
+  background-color: var(--white);
+}
+
 .menu {
   display: none;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  margin: 0 -16px;
+  text-align: right;
 }
+
+.menu.is-active {
+  display: block;
+  flex-direction: column;
+  z-index: 100;
+  position: relative;
+  transition: all 0.2s ease-out;
+  opacity: 1;
+}
+
+.menu.is-active ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--white);
+  margin: 0 16px;
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 8px 16px;
+}
+
+.menu a.is-active,
+.menu a:hover {
+  color: var(--secondary);
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
 /* === NAVBAR ENDS === */
