@@ -42,6 +42,10 @@
   .btn-item-link .img {
     width: 150px;
   }
+  /* === HERO === */
+  .hero-title {
+    font-size: 2.3rem !important;
+  }
 }
 
 /*-----------------------------------*\

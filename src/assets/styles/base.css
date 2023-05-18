@@ -177,7 +177,7 @@ p {
 
 .section-text,
 .card-text {
-  font-size: var(--fs-4);
+  font-size: var(--fs-6);
   line-height: 1.8;
 }
 

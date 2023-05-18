@@ -5,9 +5,9 @@
             <div class="hero-content">
                 <h1 class="h1 hero-title">Make an Impression & Chat More With GetChatty</h1>
                 <p class="section-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu ut labore et
-                    dolore magna
-                    aliqua. Ut enim ad minim veniamquis nostrud
+                    Engage, connect, and discover a vibrant world of conversations on our chat platform. Whether you're
+                    seeking a place to meet new people, discuss shared interests, or simply unwind and have fun, we've got
+                    you covered.
                 </p>
 
                 <div class="btn-list">

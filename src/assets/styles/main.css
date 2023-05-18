@@ -136,12 +136,12 @@ nav {
 
 .hero-title {
   margin-block: 15px 20px;
-  font-size: 2.3rem;
+  font-size: var(--fs-3);
 }
 
 .hero .section-text {
   margin-block-end: 30px;
-  font-size: var(--fs-6);
+  font-size: 14px;
 }
 
 /* === HERO ENDS === */
