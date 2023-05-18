@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary: #095855;
+  --secondary: #ffcc00;
+  --primary-dark: #0c4d4b;
+  --secondary-light: #ffff99;
+
+  --black: #181818;
+  --white: #ffffff;
+
+  /* Typography */
+
+  --fs-1: 3rem;
+  --fs-2: 2rem;
+  --fs-3: 1.5rem;
+  --fs-4: 1.4rem;
+  --fs-5: 1.3rem;
+  --fs-6: 1.05rem;
+
+  --fw-900: 900;
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+
+  /* Spacing */
+
+  --section-padding: 50px;
+
+  /* Box shadow */
+
+  --shadow-1: 0px 0px 20px var(--primary-dark);
+  --shadow-2: 0 0 20px 4px var(--secondary);
+
+  /* Border radius */
+
+  --radius-6: 6px;
+  --radius-10: 10px;
+
+  /* Basic Transitions */
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--primary);
+  background: var(--white);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--fs-6);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+img,
+span,
+button,
+ion-icon {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* === SHARED STYLES === */
+
+.container {
+  padding-inline: 15px;
+  max-width: 97%;
+}
+
+.error {
+  color: #ff3f80;
+  font-size: 14px;
+}
+
+.btn {
+  color: var(--secondary);
+  font-size: var(--fs-6);
+  max-width: var(--width, max-content);
+  padding: 10px 20px;
+  border-radius: var(--radius-10);
+  transition: var(--transition-1);
+}
+
+.btn-primary,
+.btn-secondary:is(:hover, :focus) {
+  background-color: var(--primary);
+}
+
+.btn-primary:is(:hover, :focus),
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.btn-outline {
+  --color: var(--white);
+  --width: 100%;
+  text-align: center;
+  font-weight: var(--fw-500);
+  border: 1px solid var(--secondary);
+}
+
+.btn-outline:is(:hover, :focus) {
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.section-subtitle {
+  color: var(--primary);
+  font-size: var(--fs-3);
+  margin-block-end: 5px;
+}
+
+.h1,
+.h2 {
+  font-size: var(--fs-1);
+}
+
+.h2,
+.h3 {
+  color: var(--black);
+}
+
+.h3 {
+  font-size: var(--fs-2);
+}
+
+.section-text,
+.card-text {
+  font-size: var(--fs-4);
+  line-height: 1.8;
+}
+
+.btn-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-item-link {
+  overflow: hidden;
+  border-radius: var(--radius-10);
+}
+
+.btn-item-link .img {
+  width: 136px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.section-title {
+  margin-block: 10px 20px;
+}
+
+:is(.features, ) :is(.section-subtitle, .section-title) {
+  text-align: center;
+}
+
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--light-gray);
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-2);
+}

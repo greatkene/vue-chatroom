@@ -1,7 +1,9 @@
 @import './base.css';
+@import './media-queries.css';
 
 /* === NAVBAR === */
-.container {
+
+.nav-container {
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -9,7 +11,7 @@
   justify-content: space-between;
 }
 
-.container h1 {
+.nav-container h1 {
   color: var(--white);
 }
 
@@ -119,3 +121,25 @@ nav {
 }
 
 /* === NAVBAR ENDS === */
+
+/* === HERO SECTION */
+
+.hero {
+  background-color: var(--white);
+  color: var(--primary);
+  padding-block-start: calc(var(--section-padding) + 70px);
+}
+
+.hero-content {
+  margin-block-end: 20px;
+}
+
+.hero-title {
+  margin-block: 15px 20px;
+}
+
+.hero .section-text {
+  margin-block-end: 30px;
+}
+
+/* === HERO ENDS === */

@@ -1,8 +1,8 @@
 <template>
     <nav>
-        <div class="container">
+        <div class="nav-container">
 
-            <img src="../../assets/logo.svg" />
+            <img src="../../assets/images/logo.svg" />
 
             <div class="menu" :class="{ 'is-active': isNavbarActive }">
                 <RouterLink v-for="item in navbarItems" :key="item.title" :to="item.link"
