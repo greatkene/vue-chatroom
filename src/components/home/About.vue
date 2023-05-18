@@ -51,7 +51,7 @@
 
                 </ul>
 
-                <a href="#" class="btn btn-secondary">Join us</a>
+                <RouterLink to="/register" class="btn btn-secondary">Join us</RouterLink>
 
             </div>
 
