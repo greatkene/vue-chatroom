@@ -24,5 +24,15 @@ export const features = [
     icon: 'cube-outline',
     title: 'No Personal Data',
     description: 'You can register with just username and password'
+  },
+  {
+    icon: 'cube-outline',
+    title: 'No Personal Data',
+    description: 'You can register with just username and password'
+  },
+  {
+    icon: 'shield-checkmark-outline',
+    title: 'Secure Chats',
+    description: 'Safeguarded conversations for your peace of mind'
   }
 ]
