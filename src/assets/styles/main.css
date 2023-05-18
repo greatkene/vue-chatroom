@@ -214,6 +214,58 @@ nav {
 
 /* === FEATURES ENDS === */
 
+/* === ABOUT === */
+.about {
+  background-color: var(--primary);
+}
+
+.about .about-banner {
+  margin-block-end: 20px;
+}
+
+.about .section-text,
+.about-item:not(:last-child) {
+  margin-block-end: 25px;
+}
+
+.about-content p,
+h2 {
+  color: var(--white);
+}
+
+.about-list {
+  margin-block-end: 35px;
+  margin-left: -42px;
+}
+
+.about-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.about-item .item-icon {
+  background-color: var(--secondary);
+  color: var(--white);
+  font-size: var(--fs-7);
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.about-item .item-title {
+  margin-block-end: 10px;
+  font-size: var(--fs-5);
+  color: var(--secondary);
+  font-weight: var(--fw-700);
+}
+
+.about-item .item-text {
+  font-size: var(--fs-7);
+  color: var(--white);
+}
+
+/* === ABOUT END === */
+
 /* === FOOTER === */
 
 .footer {
@@ -236,6 +288,7 @@ nav {
 .social-list {
   display: flex;
   gap: 15px;
+  margin-left: -43px;
 }
 
 .social-link {
@@ -250,6 +303,10 @@ nav {
   background-color: var(--primary);
   color: var(--white);
   transform: translateY(-2px);
+}
+
+.footer-list {
+  margin-left: -40px;
 }
 
 .footer-list-title {
@@ -302,7 +359,7 @@ nav {
 }
 
 .copyright {
-  font-size: var(--fs-6);
+  font-size: var(--fs-7);
   text-align: center;
 }
 
