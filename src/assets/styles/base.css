@@ -4,7 +4,7 @@
   --primary: #095855;
   --secondary: #ffcc00;
   --primary-dark: #0c4d4b;
-  --secondary-light: #ffff99;
+  --secondary-light: #f4ee80;
 
   --black: #181818;
   --white: #ffffff;
@@ -113,14 +113,23 @@ button {
   transition: var(--transition-1);
 }
 
-.btn-primary,
-.btn-secondary:is(:hover, :focus) {
+.btn-primary {
   background-color: var(--primary);
+  color: var(--white);
 }
 
-.btn-primary:is(:hover, :focus),
+.btn-primary:is(:hover, :focus) {
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
 .btn-secondary {
   background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.btn-secondary:is(:hover, :focus) {
+  background-color: var(--secondary-light);
   color: var(--primary);
 }
 
@@ -143,13 +152,14 @@ button {
 
 .section-subtitle {
   color: var(--primary);
-  font-size: var(--fs-3);
+  font-size: var(--fs-5);
   margin-block-end: 5px;
 }
 
 .h1,
 .h2 {
   font-size: var(--fs-1);
+  font-weight: 600;
 }
 
 .h2,
@@ -159,6 +169,10 @@ button {
 
 .h3 {
   font-size: var(--fs-2);
+}
+
+p {
+  font-size: var(--fs-6);
 }
 
 .section-text,
@@ -189,6 +203,7 @@ button {
 
 .section-title {
   margin-block: 10px 20px;
+  font-size: var(--fs-6);
 }
 
 :is(.features, ) :is(.section-subtitle, .section-title) {

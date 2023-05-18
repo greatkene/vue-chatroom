@@ -3,11 +3,7 @@
         <div class="container">
 
             <div class="hero-content">
-
-                <p class="section-subtitle">Best Mobile App 12 day free</p>
-
-                <h1 class="h1 hero-title">Make an Impression & Drive More Downloads With VAST</h1>
-
+                <h1 class="h1 hero-title">Make an Impression & Chat More With GetChatty</h1>
                 <p class="section-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu ut labore et
                     dolore magna
@@ -18,7 +14,7 @@
                     <RouterLink class="btn btn-primary" to="/register">
                         Get Started
                     </RouterLink>
-                    <RouterLink class="btn btn-primary" to="/login">
+                    <RouterLink class="btn btn-secondary" to="/login">
                         Login
                     </RouterLink>
                 </div>

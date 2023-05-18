@@ -131,15 +131,17 @@ nav {
 }
 
 .hero-content {
-  margin-block-end: 20px;
+  margin-block-end: 45px;
 }
 
 .hero-title {
   margin-block: 15px 20px;
+  font-size: 2.3rem;
 }
 
 .hero .section-text {
   margin-block-end: 30px;
+  font-size: var(--fs-6);
 }
 
 /* === HERO ENDS === */
