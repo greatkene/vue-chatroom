@@ -8,6 +8,7 @@
 
   --black: #181818;
   --white: #ffffff;
+  --culture: hsl(75, 6%, 87%);
 
   /* Typography */
 
@@ -17,6 +18,7 @@
   --fs-4: 1.4rem;
   --fs-5: 1.3rem;
   --fs-6: 1.05rem;
+  --fs-7: 0.85rem;
 
   --fw-900: 900;
   --fw-700: 700;

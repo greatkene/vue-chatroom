@@ -10,7 +10,7 @@
                     you covered.
                 </p>
 
-                <div class="btn-list">
+                <div class="btn-list hero-btn">
                     <RouterLink class="btn btn-primary" to="/register">
                         Get Started
                     </RouterLink>

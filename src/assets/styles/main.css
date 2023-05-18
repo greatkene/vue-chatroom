@@ -132,6 +132,11 @@ nav {
 
 .hero-content {
   margin-block-end: 45px;
+  text-align: center;
+}
+
+.hero-content .hero-btn {
+  justify-content: center;
 }
 
 .hero-title {
@@ -150,7 +155,7 @@ nav {
 
 .features {
   margin-top: -50px;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .features .section-title {
@@ -208,3 +213,102 @@ nav {
 }
 
 /* === FEATURES ENDS === */
+
+/* === FOOTER === */
+
+.footer {
+  background-color: var(--culture);
+}
+
+.footer-top .container {
+  display: grid;
+  gap: 30px;
+}
+
+.footer-top .section-text {
+  margin-block: 15px 22px;
+}
+
+.footer-desc {
+  font-size: var(--fs-7);
+}
+
+.social-list {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  background-color: var(--primary);
+  padding: 12px;
+  border-radius: 50%;
+  transition: var(--transition-1);
+  color: var(--secondary);
+}
+
+.social-link:is(:hover, :focus) {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footer-list-title {
+  color: var(--primary);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  margin-block-end: 20px;
+}
+
+.footer-link {
+  font-size: var(--fs-7);
+  margin-block-start: 10px;
+  transition: var(--transition-1);
+  color: var(--primary);
+}
+
+.footer-link:is(:hover, :focus),
+.footer-item .item-link:not(.address):is(:hover, :focus) {
+  color: var(--primary-dark);
+}
+
+.footer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-block-start: 10px;
+}
+
+.footer-item ion-icon {
+  flex-shrink: 0;
+  color: var(--secondary);
+  background-color: var(--primary);
+  font-size: 17px;
+  margin-block-start: 2px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: var(--transition-1);
+  cursor: pointer;
+}
+
+.footer-item .item-link {
+  font-size: var(--fs-7);
+  transition: var(--transition-1);
+  color: var(--primary);
+}
+
+.footer-bottom {
+  padding-block: 20px;
+  border-block-start: 1px solid var(--primary);
+}
+
+.copyright {
+  font-size: var(--fs-6);
+  text-align: center;
+}
+
+.copyright-link {
+  color: var(--primary);
+  display: inline-block;
+}
+
+/* === FOOTER ENDS === */
