@@ -19,8 +19,8 @@
 </template>
   
 <script>
-import { async } from "@firebase/util";
 import { ref } from "vue";
+import { useRouter } from 'vue-router'
 import Input from "../components/forms/Input.vue";
 import useLogin from "../composables/useLogin";
 
@@ -29,20 +29,20 @@ export default {
         Input
     },
     setup() {
-        const email = ref('')
-        const password = ref('')
-
-        const { error, login } = useLogin()
+        const email = ref('');
+        const password = ref('');
+        const { error, login } = useLogin();
+        const router = useRouter();
 
         const handleSubmit = async () => {
-            await login(email.value, password.value)
+            await login(email.value, password.value);
             if (!error.value) {
-                console.log('user logged in')
+                console.log('user logged in');
+                router.push('/chatroom');
             }
-        }
+        };
 
-        return { email, password, handleSubmit, error }
+        return { email, password, handleSubmit, error };
     }
 };
 </script>
-  

@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
+import Chatroom from '../views/Chatroom.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/chatroom',
+      name: 'Chatroom',
+      component: Chatroom
     }
   ]
 })
