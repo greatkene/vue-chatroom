@@ -19,20 +19,24 @@
 </template>
   
 <script>
-import Input from "../components/forms/Input.vue";
 import { ref } from "vue";
+import Input from "../components/forms/Input.vue";
+import useSignup from "../composables/useSignup";
 
 export default {
     components: {
         Input
     },
     setup() {
+        const { error, signup } = useSignup()
+
+        // refs
         const username = ref('')
         const email = ref('')
         const password = ref('')
 
-        const handleSubmit = () => {
-            console.log(email.value, username.value, password.value);
+        const handleSubmit = async () => {
+            await signup(email.value, password.value, username.value)
         }
 
         return { username, email, password, handleSubmit }
