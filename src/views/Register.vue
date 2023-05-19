@@ -9,6 +9,8 @@
 
             <Input v-model="password" label="Password" type="password" placeholder="Enter your password" />
 
+            <div class="error">{{ error }}</div>
+
             <button class="btn btn-primary">Register</button>
             <div class="form-footer">
                 <span>Do you have an account?</span>
@@ -40,7 +42,7 @@ export default {
             console.log('user signed up')
         }
 
-        return { displayName, email, password, handleSubmit }
+        return { displayName, email, password, handleSubmit, error }
     }
 };
 </script>
