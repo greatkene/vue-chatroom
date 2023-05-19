@@ -1,8 +1,10 @@
 <template>
     <section class="section">
         <form @submit.prevent="handleSubmit" class="login">
+
             <h2>Welcome back 🥳 !!</h2>
             <p>Please login and enjoy</p>
+            <div class="error">{{ error }}</div>
             <Input v-model="email" label="Email" type="email" placeholder="Enter your email" />
 
             <Input v-model="password" label="Password" type="password" placeholder="Enter your password" />
@@ -17,8 +19,10 @@
 </template>
   
 <script>
-import Input from "../components/forms/Input.vue";
+import { async } from "@firebase/util";
 import { ref } from "vue";
+import Input from "../components/forms/Input.vue";
+import useLogin from "../composables/useLogin";
 
 export default {
     components: {
@@ -28,11 +32,16 @@ export default {
         const email = ref('')
         const password = ref('')
 
-        const handleSubmit = () => {
-            console.log(email.value, password.value);
+        const { error, login } = useLogin()
+
+        const handleSubmit = async () => {
+            await login(email.value, password.value)
+            if (!error.value) {
+                console.log('user logged in')
+            }
         }
 
-        return { email, password, handleSubmit }
+        return { email, password, handleSubmit, error }
     }
 };
 </script>
