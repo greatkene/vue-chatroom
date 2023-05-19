@@ -1,13 +1,12 @@
 <template>
     <nav>
         <div class="nav-container">
-
             <img src="../../assets/images/logo.svg" />
 
             <div class="menu" :class="{ 'is-active': isNavbarActive }">
                 <RouterLink v-for="item in navbarItems" :key="item.title" :to="item.link"
-                    :class="{ 'is-active': isActive(item.link) }">{{
-                        item.title }}
+                    :class="{ 'is-active': isActive(item.link) }">
+                    {{ item.title }}
                 </RouterLink>
             </div>
 
@@ -17,32 +16,53 @@
                     <span></span>
                     <span></span>
                 </button>
-                <button class=" btn-secondary logout">
+                <button class=" btn-secondary logout" @click="handleLogout">
                     Logout
                 </button>
             </div>
         </div>
     </nav>
 </template>
-
+  
 <script>
-import { navbarItems } from "../../utils/constants"
+import { ref } from "vue";
+import { RouterLink, useRoute } from "vue-router";
+import { navbarItems } from "../../utils/constants";
+import useLogout from "../../composables/useLogout";
+import { async } from "@firebase/util";
 
 export default {
-    data() {
+    components: {
+        RouterLink,
+    },
+    setup() {
+        const isNavbarActive = ref(false);
+        const route = useRoute();
+        const { logout, error } = useLogout();
+
+        const toggleNavbar = () => {
+            isNavbarActive.value = !isNavbarActive.value;
+        };
+
+        const isActive = (link) => {
+            return route.path === link;
+        };
+
+        const handleLogout = async () => {
+            await logout()
+            if (!error.value) {
+                console.log('user logged out')
+            }
+        }
+
         return {
-            isNavbarActive: false,
-            navbarItems: navbarItems
+            isNavbarActive,
+            navbarItems,
+            toggleNavbar,
+            isActive,
+            handleLogout,
         };
     },
-    methods: {
-        toggleNavbar() {
-            this.isNavbarActive = !this.isNavbarActive;
-        },
-        isActive(link) {
-            return this.$route.path === link;
-        }
-    }
 };
-
 </script>
+  
