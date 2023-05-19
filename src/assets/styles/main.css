@@ -25,6 +25,16 @@ nav {
   padding: 16px 32px;
 }
 
+.nav-btn {
+  display: flex;
+}
+
+.logout {
+  border-radius: var(--radius-6);
+  font-size: 14px;
+  padding: 7px;
+}
+
 .hamburger {
   display: block;
   position: relative;

@@ -10,11 +10,17 @@
                         item.title }}
                 </RouterLink>
             </div>
-            <button :class="['hamburger', { 'is-active': isNavbarActive }]" @click="toggleNavbar">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+
+            <div class="nav-btn">
+                <button :class="['hamburger', { 'is-active': isNavbarActive }]" @click="toggleNavbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class=" btn-secondary logout">
+                    Logout
+                </button>
+            </div>
         </div>
     </nav>
 </template>
