@@ -3,7 +3,7 @@
         <form @submit.prevent="handleSubmit" class="login">
             <h2>Welcome to GetChaty!</h2>
             <p>Please register and get chatty</p>
-            <Input v-model="username" label="Username" placeholder="Enter your username" />
+            <Input v-model="displayName" label="Username" placeholder="Enter your username" />
 
             <Input v-model="email" label="Email" type="email" placeholder="Enter your email" />
 
@@ -31,15 +31,16 @@ export default {
         const { error, signup } = useSignup()
 
         // refs
-        const username = ref('')
+        const displayName = ref('')
         const email = ref('')
         const password = ref('')
 
         const handleSubmit = async () => {
-            await signup(email.value, password.value, username.value)
+            await signup(email.value, password.value, displayName.value)
+            console.log('user signed up')
         }
 
-        return { username, email, password, handleSubmit }
+        return { displayName, email, password, handleSubmit }
     }
 };
 </script>
