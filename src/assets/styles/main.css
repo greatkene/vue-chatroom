@@ -91,12 +91,15 @@ nav {
 }
 
 .menu.is-active {
-  display: block;
-  flex-direction: column;
   z-index: 100;
-  position: relative;
-  transition: all 0.2s ease-out;
+  position: absolute;
+  right: 2em;
+  background: var(--primary);
+  border: 2px solid #fff;
+  transition: all 0.2s ease-in-out;
   opacity: 1;
+  top: 70px;
+  border-radius: 20px;
 }
 
 .menu.is-active {
