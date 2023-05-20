@@ -1,13 +1,17 @@
 <template>
     <div class="chat-header">
-        <h1 class="section-title">Welcome, GreatKene</h1>
+        <h1 class="section-title">Welcome, {{ user?.displayName }}</h1>
     </div>
 </template>
 
 
 <script>
+import getUser from "../../composables/getUser"
 
 export default {
-    name: 'ChatHeader'
+    setup() {
+        const { user } = getUser()
+        return { user }
+    }
 }
 </script>

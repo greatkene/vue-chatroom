@@ -16,7 +16,7 @@
                     <span></span>
                     <span></span>
                 </button>
-                <button class=" btn-secondary logout" @click="handleLogout">
+                <button v-if="user" class=" btn-secondary logout" @click="handleLogout">
                     Logout
                 </button>
             </div>
@@ -29,6 +29,7 @@ import { ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { navbarItems } from "../../utils/constants";
 import useLogout from "../../composables/useLogout";
+import getUser from "../../composables/getUser"
 
 export default {
     components: {
@@ -38,6 +39,8 @@ export default {
         const isNavbarActive = ref(false);
         const route = useRoute();
         const { logout, error } = useLogout();
+        const { user } = getUser()
+
 
         const toggleNavbar = () => {
             isNavbarActive.value = !isNavbarActive.value;
@@ -60,6 +63,7 @@ export default {
             toggleNavbar,
             isActive,
             handleLogout,
+            user
         };
     },
 };
