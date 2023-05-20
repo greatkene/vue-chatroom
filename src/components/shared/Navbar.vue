@@ -29,7 +29,6 @@ import { ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { navbarItems } from "../../utils/constants";
 import useLogout from "../../composables/useLogout";
-import { async } from "@firebase/util";
 
 export default {
     components: {
