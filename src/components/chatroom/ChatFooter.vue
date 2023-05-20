@@ -1,8 +1,9 @@
 <template>
     <div class="chat-footer">
         <form>
-            <Input type="text" />
-            <button class="btn btn-primary">SEND</button>
+
+            <Input type="text" placeholder="Enter your message here..." />
+            <ion-icon class="chat-send-btn" name="navigate-outline"></ion-icon>
         </form>
     </div>
 </template>

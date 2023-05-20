@@ -480,5 +480,63 @@ h2 {
 /* === FORM ENDS === */
 
 /* === CHATROOM === */
-
+.chat {
+  height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.chat-container {
+  width: 350px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary);
+  background-color: var(--culture);
+}
+.chat-header h1 {
+  color: var(--primary);
+  padding: 6px;
+}
+.chat-body {
+  flex: 1;
+  background-color: var(--primary);
+  padding: 20px 30px;
+}
+.chat-message {
+  background-color: var(--white);
+  padding: 10px;
+  color: var(--primary);
+  width: fit-content;
+  border-radius: var(--radius-6);
+  margin-bottom: 15px;
+  font-size: var(--fs-7);
+}
+.user-message {
+  margin-left: auto;
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+.chat-footer form {
+  display: flex;
+  justify-content: space-between;
+}
+.chat-footer form input {
+  flex: 1;
+  height: 50px;
+  border: 2px solid var(--secondary);
+  outline: none;
+  padding-left: 5px;
+  font-size: var(--fs-7);
+  width: 300px;
+}
+.chat-send-btn {
+  font-size: var(--fs-3);
+  outline: none;
+  font-weight: var(--fw-700);
+  padding: 10px;
+  cursor: pointer;
+}
 /* === CHATROOM ENDS === */

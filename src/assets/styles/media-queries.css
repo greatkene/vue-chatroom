@@ -24,6 +24,12 @@
   .footer-top .container {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Chatroom */
+  .chat-container {
+    width: 350px;
+    height: 50vh;
+  }
 }
 
 /*-----------------------------------*\
@@ -64,6 +70,11 @@
 
   .hero-content .hero-btn {
     justify-content: center !important;
+  }
+
+  /* Chatroom */
+  .chat-container {
+    width: 450px;
   }
 }
 
@@ -125,6 +136,11 @@
     margin-block-end: 0;
   }
 
+  /* Chatroom */
+  .chat-container {
+    width: 450px;
+  }
+
   /* Footer */
   .footer-top .container {
     grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
@@ -176,6 +192,11 @@
 
   .features-card {
     padding: 30px;
+  }
+
+  /* Chatroom */
+  .chat-container {
+    width: 450px;
   }
 
   /* Footer */

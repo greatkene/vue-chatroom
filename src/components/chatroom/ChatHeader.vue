@@ -1,9 +1,7 @@
 <template>
-    <section class="section">
-        <div class="header">
-            <h1>Welcome, GreatKene</h1>
-        </div>
-    </section>
+    <div class="chat-header">
+        <h1 class="section-title">Welcome, GreatKene</h1>
+    </div>
 </template>
 
 

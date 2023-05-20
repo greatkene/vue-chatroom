@@ -1,9 +1,11 @@
 <template>
-    <main class="chat-container">
-        <ChatHeader />
-        <ChatBody />
-        <ChatFooter />
-    </main>
+    <div class="chat">
+        <main class="chat-container">
+            <ChatHeader />
+            <ChatBody />
+            <ChatFooter />
+        </main>
+    </div>
 </template>
 
 <script>
