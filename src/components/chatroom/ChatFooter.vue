@@ -1,19 +1,43 @@
 <template>
     <div class="chat-footer">
-        <form>
-
-            <Input type="text" placeholder="Enter your message here..." />
-            <ion-icon class="chat-send-btn" name="navigate-outline"></ion-icon>
+        <form @submit.prevent="handleSubmit">
+            <textarea type="text" placeholder="Enter your message here..." v-model="message"
+                @keydown.enter="handleEnterKey"></textarea>
+            <button type="submit">
+                <ion-icon class="chat-send-btn" name="navigate-outline"></ion-icon>
+            </button>
         </form>
     </div>
 </template>
-
+  
 <script>
-import Input from "../../components/forms/Input.vue";
+import { ref } from 'vue';
+import getUser from '../../composables/getUser';
+import { serverTimestamp } from '../../firebase/config';
 
 export default {
-    components: {
-        Input
-    }
+    setup() {
+        const { user } = getUser();
+        const message = ref('');
+
+        const handleSubmit = async () => {
+            const chat = {
+                name: user.value.displayName,
+                message: message.value,
+                createdAt: serverTimestamp(),
+            };
+            message.value = '';
+        };
+
+        const handleEnterKey = (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                handleSubmit();
+                event.preventDefault();
+            }
+        };
+
+        return { message, handleSubmit, handleEnterKey, chat };
+    },
 };
 </script>
+  

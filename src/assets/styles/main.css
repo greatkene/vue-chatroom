@@ -526,7 +526,7 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-.chat-footer form input {
+.chat-footer form textarea {
   flex: 1;
   height: 50px;
   border: 2px solid var(--secondary);
