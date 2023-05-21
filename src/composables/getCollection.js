@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import { collection, query, orderBy, onSnapshot } from 'firebase/firestore'
 import { projectFirestore } from '../firebase/config'
 
@@ -8,7 +8,7 @@ const getCollection = (collectionName) => {
 
   const q = query(collection(projectFirestore, collectionName), orderBy('createdAt'))
 
-  onSnapshot(
+  const unsubscribe = onSnapshot(
     q,
     (snap) => {
       let results = []
@@ -24,6 +24,13 @@ const getCollection = (collectionName) => {
       error.value = 'could not fetch data'
     }
   )
+
+  watchEffect((onInvalidate) => {
+    onInvalidate(() => {
+      unsubscribe()
+    })
+  })
+
   return { documents, error }
 }
 
