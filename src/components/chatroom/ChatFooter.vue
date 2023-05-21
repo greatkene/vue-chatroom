@@ -6,7 +6,10 @@
             <button type="submit">
                 <ion-icon class="chat-send-btn" name="navigate-outline"></ion-icon>
             </button>
+
         </form>
+        <div class="error">{{ error }}</div>
+
     </div>
 </template>
   
@@ -14,10 +17,13 @@
 import { ref } from 'vue';
 import getUser from '../../composables/getUser';
 import { serverTimestamp } from '../../firebase/config';
+import useCollection from '../../composables/useCollection';
 
 export default {
     setup() {
         const { user } = getUser();
+        const { addDocToCollection, error } = useCollection('messages');
+
         const message = ref('');
 
         const handleSubmit = async () => {
@@ -26,7 +32,10 @@ export default {
                 message: message.value,
                 createdAt: serverTimestamp(),
             };
-            message.value = '';
+            await addDocToCollection(chat);
+            if (!error.value) {
+                message.value = '';
+            }
         };
 
         const handleEnterKey = (event) => {
@@ -36,8 +45,9 @@ export default {
             }
         };
 
-        return { message, handleSubmit, handleEnterKey, chat };
+        return { message, handleSubmit, handleEnterKey, error };
     },
 };
+
 </script>
   
