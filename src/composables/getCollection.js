@@ -1,15 +1,15 @@
 import { ref } from 'vue'
-import { collection, onSnapshot } from 'firebase/firestore'
+import { collection, query, orderBy, onSnapshot } from 'firebase/firestore'
 import { projectFirestore } from '../firebase/config'
 
 const getCollection = (collectionName) => {
   const documents = ref(null)
   const error = ref(null)
 
-  let collectionRef = collection(projectFirestore, collectionName).orderBy('createdAt')
+  const q = query(collection(projectFirestore, collectionName), orderBy('createdAt'))
 
   onSnapshot(
-    collectionRef,
+    q,
     (snap) => {
       let results = []
       snap.docs.forEach((doc) => {
@@ -26,4 +26,5 @@ const getCollection = (collectionName) => {
   )
   return { documents, error }
 }
+
 export default getCollection

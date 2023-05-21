@@ -1,10 +1,33 @@
 <template>
-    <div class="chat-body">
-        <p class="chat-message">
-            Hello
-        </p>
-        <p class="chat-message user-message">
-            Hi
-        </p>
+    <div>
+        <div v-if="error">{{ error }}</div>
+
+        <div v-if="documents">
+            <div v-for="doc in documents" :key="doc.id" class="chat-body">
+                <span class="created-at">{{ formatDate(doc.createdAt) }}</span>
+                <span class="chat-name">{{ doc.name }}</span>
+                <p class="chat-message">
+                    {{ doc.message }}
+                </p>
+            </div>
+        </div>
     </div>
 </template>
+  
+<script>
+import getCollection from '../../composables/getCollection';
+import moment from 'moment';
+
+export default {
+    setup() {
+        const { error, documents } = getCollection('messages');
+
+        const formatDate = (date) => {
+            return moment(date.toDate()).fromNow();
+        };
+
+        return { error, documents, formatDate };
+    },
+};
+</script>
+  

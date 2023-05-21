@@ -517,6 +517,16 @@ h2 {
   margin-bottom: 15px;
   font-size: var(--fs-7);
 }
+.chat-name {
+  margin-right: 5px;
+  color: var(--culture);
+  font-size: var(--fs-7);
+}
+
+.created-at {
+  color: var(--secondary);
+  font-size: var(--fs-7);
+}
 .user-message {
   margin-left: auto;
   background-color: var(--secondary);
