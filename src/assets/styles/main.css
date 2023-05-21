@@ -480,6 +480,11 @@ h2 {
 .login a:hover {
   text-decoration: underline;
 }
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 /* === FORM ENDS === */
 
 /* === CHATROOM === */

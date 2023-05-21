@@ -8,7 +8,7 @@
 
             <Input v-model="password" label="Password" type="password" placeholder="Enter your password" />
 
-            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-primary" :class="{ 'disabled': isLoggingIn }" :disabled="isLoggingIn">Login</button>
             <div class="form-footer">
                 <a href="#">Forgot password</a>
                 <RouterLink to="/register">Create account</RouterLink>
@@ -16,7 +16,7 @@
         </form>
     </section>
 </template>
-  
+
 <script>
 import { ref } from "vue";
 import { useRouter } from 'vue-router';
@@ -34,18 +34,20 @@ export default {
         const { error, login } = useLogin();
         const router = useRouter();
         const toast = useToast();
+        const isLoggingIn = ref(false);
 
         const handleSubmit = async () => {
+            isLoggingIn.value = true;
             await login(email.value, password.value);
             if (!error.value) {
                 console.log('user logged in');
                 toast.success('Login successful');
                 router.push('/chatroom');
             }
+            isLoggingIn.value = false;
         };
 
-        return { email, password, handleSubmit, error };
+        return { email, password, handleSubmit, error, isLoggingIn };
     }
 };
 </script>
-  

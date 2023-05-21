@@ -10,7 +10,8 @@
             <Input v-model="email" label="Email" type="email" placeholder="Enter your email" />
 
             <Input v-model="password" label="Password" type="password" placeholder="Enter your password" />
-            <button class="btn btn-primary">Register</button>
+            <button class="btn btn-primary" :class="{ 'disabled': isRegistering }"
+                :disabled="isRegistering">Register</button>
             <div class="form-footer">
                 <span>Do you have an account?</span>
                 <RouterLink to="/login">Login</RouterLink>
@@ -18,7 +19,8 @@
         </form>
     </section>
 </template>
-  
+
+
 <script>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -41,8 +43,12 @@ export default {
         const router = useRouter();
         const toast = useToast();
 
+        const isRegistering = ref(false);
+
         const handleSubmit = async () => {
             try {
+                isRegistering.value = true;
+
                 await signup(email.value, password.value, displayName.value);
                 console.log("user signed up");
 
@@ -52,11 +58,12 @@ export default {
             } catch (err) {
                 console.error(err);
                 toast.error("Registration failed");
+            } finally {
+                isRegistering.value = false;
             }
         };
 
-        return { displayName, email, password, handleSubmit, error };
+        return { displayName, email, password, handleSubmit, error, isRegistering };
     }
 };
 </script>
-  
