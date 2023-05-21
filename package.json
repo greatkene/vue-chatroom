@@ -13,7 +13,8 @@
     "firebase": "^9.22.0",
     "moment": "^2.29.4",
     "vue": "^3.3.2",
-    "vue-router": "^4.2.1"
+    "vue-router": "^4.2.1",
+    "vue-toast-notification": "^3.1.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

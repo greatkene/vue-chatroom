@@ -12,7 +12,7 @@
             <button class="btn btn-primary">Login</button>
             <div class="form-footer">
                 <a href="#">Forgot password</a>
-                <a href="#">Create account</a>
+                <RouterLink to="/register">Create account</RouterLink>
             </div>
         </form>
     </section>

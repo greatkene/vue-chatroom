@@ -21,6 +21,8 @@
   
 <script>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useToast } from "vue-toast-notification";
 import Input from "../components/forms/Input.vue";
 import useSignup from "../composables/useSignup";
 
@@ -29,19 +31,31 @@ export default {
         Input
     },
     setup() {
-        const { error, signup } = useSignup()
+        const { error, signup } = useSignup();
 
         // refs
-        const displayName = ref('')
-        const email = ref('')
-        const password = ref('')
+        const displayName = ref("");
+        const email = ref("");
+        const password = ref("");
+
+        const router = useRouter();
+        const toast = useToast();
 
         const handleSubmit = async () => {
-            await signup(email.value, password.value, displayName.value)
-            console.log('user signed up')
-        }
+            try {
+                await signup(email.value, password.value, displayName.value);
+                console.log("user signed up");
 
-        return { displayName, email, password, handleSubmit, error }
+                toast.success("Registration successful");
+
+                router.push("/chatroom");
+            } catch (err) {
+                console.error(err);
+                toast.error("Registration failed");
+            }
+        };
+
+        return { displayName, email, password, handleSubmit, error };
     }
 };
 </script>
