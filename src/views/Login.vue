@@ -1,7 +1,6 @@
 <template>
     <section class="section">
         <form @submit.prevent="handleSubmit" class="login">
-
             <h2>Welcome back 🥳 !!</h2>
             <p>Please login and enjoy</p>
             <div class="error">{{ error }}</div>
@@ -20,7 +19,8 @@
   
 <script>
 import { ref } from "vue";
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
+import { useToast } from "vue-toast-notification";
 import Input from "../components/forms/Input.vue";
 import useLogin from "../composables/useLogin";
 
@@ -33,11 +33,13 @@ export default {
         const password = ref('');
         const { error, login } = useLogin();
         const router = useRouter();
+        const toast = useToast();
 
         const handleSubmit = async () => {
             await login(email.value, password.value);
             if (!error.value) {
                 console.log('user logged in');
+                toast.success('Login successful');
                 router.push('/chatroom');
             }
         };
@@ -46,3 +48,4 @@ export default {
     }
 };
 </script>
+  
