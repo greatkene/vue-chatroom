@@ -2,7 +2,7 @@
     <div>
         <div v-if="error">{{ error }}</div>
 
-        <div v-if="documents">
+        <div v-if="documents" class="chat-container">
             <div v-for="doc in documents" :key="doc.id" class="chat-body">
                 <span class="created-at">{{ formatDate(doc.createdAt) }}</span>
                 <span class="chat-name">{{ doc.name }}</span>

@@ -1,10 +1,12 @@
 <template>
     <div class="chat">
-        <main class="chat-container">
+        <div class="chat-container">
             <ChatHeader />
-            <ChatBody />
+            <div class="chat-body-container">
+                <ChatBody />
+            </div>
             <ChatFooter />
-        </main>
+        </div>
     </div>
 </template>
 
